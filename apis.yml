@@ -1,23 +1,60 @@
 aid: bestowinc
+
 name: Bestowinc
-description: 'Bestowinc is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Bestowinc is a financial technology company that provides a platform for employee gifting and rewards. The service enables employers to allocate digital gift cards and charitable donations to employees as part of recognition programs. While detailed public documentation is limited, the company positions itself as a modern solution for workplace appreciation and aims to integrate with payroll and HR systems to streamline reward distribution. Further information about APIs, developer resources, or official documentation was not found during profiling.'
+
 url: https://raw.githubusercontent.com/api-evangelist/bestowinc/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-28 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-28'
+
 modified: '2026-09-28'
+
 tags:
 - Company
-apis: []
+- FinTech
+- EmployeeRewards
+- GiftCards
+- API
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: LLMsTxt
+  url: llms/bestowinc-llms.txt
+- type: Hosts
+  url: hosts/bestowinc-hosts.yml
+- type: DomainSecurity
+  url: security/bestowinc-domain-security.yml
 - type: Website
-  url: https://equityzen.com/company/bestowinc
+  url: https://bestowinc.com
+
+apis: []
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: "Home page returns a JavaScript shell with no machine‑readable documentation behind it."
+  evidence:
+    - url: https://bestowinc.com
+      status: 200
+  checked: '2026-09-28'
+x-enrichment:
+  date: '2026-09-28'
+  status: enriched
+  artifacts_added: 6
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
